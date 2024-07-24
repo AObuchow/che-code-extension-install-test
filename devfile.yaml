@@ -1,0 +1,19 @@
+schemaVersion: 2.2.2
+metadata:
+  name: cpp
+components:
+  - name: tools
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      memoryLimit: 1G
+      mountSources: true
+commands:
+  - id: install-extensions
+    exec:
+      label: "Install Extensions"
+      component: tools
+      workingDir: "${PROJECT_SOURCE}"
+      commandLine:  export VSCODE_AGENT_FOLDER=/checode/remote && cd /checode/checode-linux-libc ./node out/server-main.js --install-extension redhat.vscode-yaml
+events:
+  postStart:
+    - install-extensions
