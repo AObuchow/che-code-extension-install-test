@@ -1,0 +1,1 @@
+# che-code-extension-install-test
