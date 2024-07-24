@@ -13,7 +13,7 @@ commands:
       label: "Install Extensions"
       component: tools
       workingDir: "${PROJECT_SOURCE}"
-      commandLine:  VSCODE_AGENT_FOLDER=/checode/remote && cd /checode/checode-linux-libc/ubi8/ ./node out/server-main.js --install-extension redhat.vscode-yam
+      commandLine:  VSCODE_AGENT_FOLDER=/checode/remote && cd /checode/checode-linux-libc/ubi8/ && ./node out/server-main.js --install-extension redhat.vscode-yam
 events:
   postStart:
     - install-extensions
